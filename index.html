@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aventric — AI operating intelligence for F&amp;B groups</title>
+  <meta name="description" content="Aventric builds AI operating-intelligence systems for F&B groups. Based in Riyadh, built for the Saudi and GCC market. See faster. Decide better." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='16,3 29,29 3,29' fill='none' stroke='%2300b884' stroke-width='3'/></svg>" />
+</head>
+<body>
+
+  <canvas id="ambient-field" aria-hidden="true"></canvas>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top" aria-label="Aventric home">
+      <svg class="nav__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="markGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="var(--color-emerald)" />
+            <stop offset="100%" stop-color="var(--color-deep-verdant)" />
+          </linearGradient>
+        </defs>
+        <polygon points="16,2 30,30 2,30" fill="none" stroke="url(#markGradient)" stroke-width="3" />
+        <polygon points="16,14 21,24 11,24" fill="var(--color-emerald)" />
+      </svg>
+      <span class="nav__wordmark">Aventric</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#solutions">Solutions</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="btn btn--primary nav__cta" href="#contact">Request a demo</a>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="label">AI operating intelligence for F&amp;B</p>
+        <h1 class="display">See faster.<br />Decide better.</h1>
+        <p class="body-copy hero__body">
+          Aventric builds AI operating-intelligence systems for F&amp;B groups —
+          turning fragmented data from sales, delivery, menus, marketing,
+          operations, suppliers, and compliance into clear decisions and
+          controlled action.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contact">Request a demo</a>
+          <a class="ghost-link" href="#solutions">Explore the solutions</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <canvas id="constellation" aria-label="Constellation of colored particles forming a network — fragmented data becoming intelligence"></canvas>
+      </div>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="section section--split" id="manifesto">
+      <div class="section__headline">
+        <h2 class="heading-lg">Effort was never the problem. Scattered truth is.</h2>
+      </div>
+      <div class="section__body">
+        <p class="label label--amber">Why Aventric</p>
+        <p class="body-copy">
+          Most F&amp;B teams do not suffer from a lack of effort. They suffer
+          from scattered information, delayed reporting, unclear signals, and
+          decisions made too late.
+        </p>
+        <p class="body-copy body-copy--muted">
+          A branch can underperform for days before the pattern becomes
+          obvious. A delivery platform can quietly decline. A top-selling item
+          can drop. Management sees the numbers eventually — but eventually
+          is expensive.
+        </p>
+        <p class="body-copy">Aventric changes that.</p>
+      </div>
+    </section>
+
+    <!-- ============ FIVE QUESTIONS ============ -->
+    <section class="section questions" id="approach">
+      <p class="label label--amber">Every signal, answered</p>
+      <ol class="questions__list">
+        <li class="heading"><span class="questions__index">01</span><span>What <em>changed</em>.</span></li>
+        <li class="heading"><span class="questions__index">02</span><span>Where it <em>happened</em>.</span></li>
+        <li class="heading"><span class="questions__index">03</span><span>Why it <em>likely happened</em>.</span></li>
+        <li class="heading"><span class="questions__index">04</span><span>What deserves <em>attention</em>.</span></li>
+        <li class="heading"><span class="questions__index">05</span><span>What to <em>do next</em>.</span></li>
+      </ol>
+      <p class="body-copy body-copy--muted questions__note">
+        Traditional dashboards answer “what happened.” Aventric systems are
+        built to answer the questions that follow — before the operator would
+        normally discover them manually.
+      </p>
+    </section>
+
+    <!-- ============ SOLUTIONS ============ -->
+    <section class="section" id="solutions">
+      <div class="section--split">
+        <div class="section__headline">
+          <h2 class="heading-lg">Two systems.<br />One intelligence layer.</h2>
+        </div>
+        <div class="section__body">
+          <p class="label label--amber">The Aventric ecosystem</p>
+          <p class="body-copy">
+            We do not sell generic software licenses. Each system is built
+            around your real business — your brands, branches, channels,
+            menus, workflows, and teams.
+          </p>
+        </div>
+      </div>
+
+      <!-- Trellis -->
+      <article class="solution">
+        <div class="solution__visual" aria-hidden="true">
+          <canvas class="solution__canvas" data-shape="lattice"></canvas>
+        </div>
+        <div class="solution__copy">
+          <p class="label">Decision intelligence</p>
+          <h3 class="heading-solution">Trellis</h3>
+          <p class="body-copy">
+            The central brain for multi-branch F&amp;B operators. Trellis
+            connects sales, branches, brands, channels, delivery platforms,
+            menu performance, campaigns, and forecasts into one executive
+            intelligence layer.
+          </p>
+          <p class="body-copy body-copy--muted">
+            It does not simply show dashboards. It detects meaningful movement
+            against baselines and forecasts, explains what drove it, and routes
+            attention to where it matters — from end-of-day briefs to live
+            business signals.
+          </p>
+        </div>
+      </article>
+
+      <!-- Convoy -->
+      <article class="solution solution--reverse">
+        <div class="solution__visual" aria-hidden="true">
+          <canvas class="solution__canvas" data-shape="chain"></canvas>
+        </div>
+        <div class="solution__copy">
+          <p class="label">Food safety &amp; traceability</p>
+          <h3 class="heading-solution">Convoy</h3>
+          <p class="body-copy">
+            Every ingredient, accounted for. Convoy tracks food safety and
+            traceability across the supply chain — from supplier to branch to
+            plate — so compliance becomes a live signal, not a quarterly
+            scramble.
+          </p>
+          <p class="body-copy body-copy--muted">
+            When something needs attention, Convoy shows the full chain of
+            custody in seconds: what moved, where it came from, where it went,
+            and what to isolate.
+          </p>
+        </div>
+      </article>
+
+      <p class="body-copy body-copy--muted solutions__more">
+        More specialist intelligence modules are on the way — for growth,
+        margin, and expansion. <span class="amber">The ecosystem is just getting started.</span>
+      </p>
+    </section>
+
+    <!-- ============ PRINCIPLE ============ -->
+    <section class="section section--split" id="principle">
+      <div class="section__headline">
+        <h2 class="heading-lg">Human approval stays at the center.</h2>
+      </div>
+      <div class="section__body">
+        <p class="label label--amber">How we build</p>
+        <p class="body-copy">
+          Our systems never invent numbers and never act alone. Governed data
+          defines the metrics, structured evidence proves every finding, and
+          AI writes only the language — while important decisions always pass
+          through human hands.
+        </p>
+        <p class="body-copy body-copy--muted">
+          Every recommendation is logged. Every approved action has an audit
+          trail. Intelligence you can trust is intelligence you can verify.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / RIYADH ============ -->
+    <section class="section section--split" id="about">
+      <div class="section__headline">
+        <h2 class="heading-lg">Built in Riyadh. Built for the region.</h2>
+      </div>
+      <div class="section__body">
+        <p class="label label--amber">About Aventric</p>
+        <p class="body-copy">
+          Aventric is a Riyadh-based AI company specializing in the food and
+          beverage industry, designed from day one for the Saudi and GCC
+          market — its brands, its channels, its pace.
+        </p>
+        <p class="body-copy body-copy--muted">
+          Our goal is simple: help F&amp;B operators see faster, decide
+          better, reduce leakage, protect revenue, and execute with more
+          confidence.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="contact">
+      <h2 class="heading-lg cta__headline">See your business clearly.</h2>
+      <p class="body-copy body-copy--muted cta__body">
+        Tell us about your brands and branches. We will show you what your
+        data has been trying to say.
+      </p>
+      <a class="btn btn--primary" href="mailto:hello@aventric.com">Request a demo</a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <svg class="nav__mark" viewBox="0 0 32 32" aria-hidden="true">
+        <polygon points="16,2 30,30 2,30" fill="none" stroke="var(--color-emerald)" stroke-width="3" />
+      </svg>
+      <span class="nav__wordmark">Aventric</span>
+    </div>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#solutions">Solutions</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+      <a href="mailto:hello@aventric.com">Contact</a>
+    </nav>
+    <p class="footer__meta">© 2026 Aventric — Riyadh, Saudi Arabia</p>
+  </footer>
+
+  <script src="particles.js"></script>
+</body>
+</html>
