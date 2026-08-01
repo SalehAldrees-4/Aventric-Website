@@ -80,16 +80,69 @@
     var opts = options || {};
     var running = true;
 
+    // Assembly intro: particles begin scattered and converge into
+    // formation the first time the canvas enters the viewport.
+    var assemble = opts.assemble !== false && !reducedMotion;
+    var started = !assemble;
+    var startTime = null;
+
+    if (assemble) {
+      for (var a = 0; a < particles.length; a++) {
+        var pp = particles[a];
+        pp.tx = pp.x;
+        pp.ty = pp.y;
+        pp.sx = pp.x + (Math.random() - 0.5) * 1.6;
+        pp.sy = pp.y + (Math.random() - 0.5) * 1.6;
+        pp.delay = Math.random() * 0.6;
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            for (var e = 0; e < entries.length; e++) {
+              if (entries[e].isIntersecting) {
+                started = true;
+                io.disconnect();
+              }
+            }
+          },
+          { threshold: 0.2 }
+        );
+        io.observe(canvas);
+      } else {
+        started = true;
+      }
+    }
+
+    function easeOutCubic(v) {
+      return 1 - Math.pow(1 - v, 3);
+    }
+
     function frame(t) {
       if (!running) return;
       var ctx = view.ctx;
       ctx.clearRect(0, 0, view.w, view.h);
       var time = t * 0.001;
+
+      if (started && startTime === null) startTime = time;
+      var elapsed = startTime === null ? 0 : time - startTime;
+
       for (var i = 0; i < particles.length; i++) {
         var p = particles[i];
+        var px = p.x;
+        var py = p.y;
+        var settle = 1;
+
+        if (assemble) {
+          if (!started) continue;
+          var prog = Math.max(0, Math.min(1, (elapsed - p.delay) / 1.4));
+          settle = easeOutCubic(prog);
+          px = p.sx + (p.tx - p.sx) * settle;
+          py = p.sy + (p.ty - p.sy) * settle;
+        }
+
         var wobble = reducedMotion ? 0 : Math.sin(time * p.speed + p.phase);
-        var x = (p.x + p.driftX * wobble) * view.w;
-        var y = (p.y + p.driftY * wobble) * view.h;
+        var x = (px + p.driftX * wobble * settle) * view.w;
+        var y = (py + p.driftY * wobble * settle) * view.h;
         var twinkle = reducedMotion
           ? 1
           : 0.75 + 0.25 * Math.sin(time * p.twinkleSpeed + p.phase * 2);
@@ -100,7 +153,7 @@
           p.size,
           p.rot + (reducedMotion ? 0 : time * p.spin),
           p.color,
-          p.alpha * twinkle
+          p.alpha * twinkle * (assemble ? 0.15 + 0.85 * settle : 1)
         );
       }
       if (!reducedMotion) {
@@ -272,7 +325,7 @@
       p.driftY = (rand() - 0.5) * 0.02;
       particles.push(p);
     }
-    animate(canvas, particles);
+    animate(canvas, particles, { assemble: false });
   }
 
   function init() {

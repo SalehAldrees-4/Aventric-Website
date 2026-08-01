@@ -206,6 +206,41 @@ em {
   color: var(--color-bone-white);
 }
 
+.btn--primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ==========================================================================
+   Motion — reveal states (classes applied by motion.js; without JS the
+   content simply renders visible)
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.hero__visual {
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ==========================================================================
    Navigation
    ========================================================================== */
@@ -246,6 +281,7 @@ em {
 }
 
 .nav__links a {
+  position: relative;
   font-size: var(--text-nav-label);
   font-weight: 600;
   letter-spacing: 0.025em;
@@ -255,8 +291,25 @@ em {
   transition: color 0.2s ease;
 }
 
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: var(--color-emerald);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
 .nav__links a:hover {
   color: var(--color-bone-white);
+}
+
+.nav__links a:hover::after {
+  transform: scaleX(1);
 }
 
 /* ==========================================================================
