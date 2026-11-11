@@ -86,8 +86,8 @@
           <svg class="stage__lines" id="stageLines" preserveAspectRatio="none"></svg>
           <div class="stage__core" id="stageCore"><img src="assets/logo/mark-white.svg" alt="" /><i></i><i></i></div>
           <div class="stage__out" id="stageOut">
-            <div class="stage__card"><p class="tag tag--navy">Solution 01</p><b>Trellis</b><span>Decision intelligence</span></div>
-            <div class="stage__card stage__card--navy"><p class="tag tag--navy">Solution 02</p><b>Convoy</b><span>Food safety, hazard &amp; traceability</span></div>
+            <div class="stage__card stage__card--trellis"><p class="tag">Solution 01</p><b>Trellis</b><span>Decision intelligence</span></div>
+            <div class="stage__card stage__card--convoy"><p class="tag">Solution 02</p><b>Convoy</b><span>Food safety, hazard &amp; traceability</span></div>
           </div>
         </div>
       </div>
@@ -100,15 +100,15 @@
       <p class="eyebrow eyebrow--ink reveal">The solutions</p>
       <h2 class="display" data-split>Two solutions.<br />One industry.</h2>
       <div class="systems__grid">
-        <a class="syscard syscard--dark reveal" href="#trellis">
-          <small>01</small>
+        <a class="syscard syscard--trellis reveal" href="#trellis">
+          <p class="plogo"><svg class="plogo__i" viewBox="0 0 28 28" aria-hidden="true"><path d="M10 4v20M18 4.5v19.5M4 10h20M4 18h20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" /><rect x="20.8" y="2" width="5.4" height="5.4" rx="1.4" fill="#2FA97C" /></svg><span>trellis</span></p>
           <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M10 60 60 10l50 50-50 50zM35 35l50 50M85 35 35 85M10 60h100M60 10v100" /></svg>
           <h3>Trellis</h3>
           <p>The decision intelligence layer. Performance, forecasts and signals for every brand, branch and channel.</p>
           <span class="syscard__go">Explore Trellis</span>
         </a>
-        <a class="syscard syscard--navy reveal" href="#convoy">
-          <small>02</small>
+        <a class="syscard syscard--convoy reveal" href="#convoy">
+          <p class="plogo"><svg class="plogo__i plogo__i--c" viewBox="0 0 46 32" aria-hidden="true"><g fill="none" stroke-width="4.6" stroke-linecap="round"><path d="M3 14h12c8 0 8-9 16-9h12" stroke="currentColor" /><path class="plogo__c2" d="M3 27h12c8 0 8-9 16-9h12" /></g></svg><span>convoy</span></p>
           <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M8 92c22 0 22-30 44-30s22-30 44-30h16" /><circle cx="8" cy="92" r="5" /><circle cx="52" cy="62" r="5" /><circle cx="96" cy="32" r="5" /></svg>
           <h3>Convoy</h3>
           <p>Food safety, hazard control and traceability. Every ingredient followed from supplier to plate.</p>
@@ -124,7 +124,8 @@
     <div class="wrap">
       <div class="split">
         <div>
-          <p class="eyebrow reveal"><b>01</b>Trellis · Decision intelligence</p>
+          <p class="plogo plogo--lg reveal"><svg class="plogo__i" viewBox="0 0 28 28" aria-hidden="true"><path d="M10 4v20M18 4.5v19.5M4 10h20M4 18h20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" /><rect x="20.8" y="2" width="5.4" height="5.4" rx="1.4" fill="#2FA97C" /></svg><span>trellis</span></p>
+          <p class="eyebrow reveal"><b>01</b>Decision intelligence</p>
           <h2 class="h2" data-split>Dashboards tell you what happened. Trellis tells you <em>what changed.</em></h2>
           <p class="lede reveal">Trellis compares every day against baseline and forecast, then surfaces only the movement that matters: which branch, which channel, which item, and how material it is.</p>
           <ul class="ticks reveal">
@@ -136,24 +137,45 @@
         </div>
 
         <div class="ui reveal" id="trellisUi">
-          <div class="ui__bar"><span><i class="pulse"></i>Signal feed</span><span>Illustrative data</span></div>
-          <div class="ui__chart">
-            <div class="ui__chart-head"><b>Revenue · all branches</b><span><i class="k k--a"></i>Actual<i class="k k--f"></i>Forecast</span></div>
-            <svg viewBox="0 0 520 170" preserveAspectRatio="none">
-              <path class="c-band" d="M300 76C350 62 420 52 520 34V98C430 104 360 104 300 96Z" />
-              <path class="c-grid" d="M0 42h520M0 85h520M0 128h520" />
-              <path class="c-actual" pathLength="1" d="M0 126C30 112 52 124 82 102S128 110 160 88 204 100 236 84 272 96 300 86" />
-              <path class="c-fore" pathLength="1" d="M300 86C352 80 430 72 520 64" />
-              <line class="c-now" x1="300" y1="8" x2="300" y2="162" />
-              <circle class="c-dot" cx="300" cy="86" r="4.5" />
-            </svg>
+          <aside class="ui__side">
+            <p class="plogo plogo--sm"><svg class="plogo__i" viewBox="0 0 28 28" aria-hidden="true"><path d="M10 4v20M18 4.5v19.5M4 10h20M4 18h20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" /><rect x="20.8" y="2" width="5.4" height="5.4" rx="1.4" fill="#2FA97C" /></svg><span>trellis</span></p>
+            <small>Command</small>
+            <ul><li class="is-active">Command Center</li></ul>
+            <small>Dashboards</small>
+            <ul><li>Executive</li><li>Marketing</li><li>Operations</li><li>Menu</li></ul>
+            <small>Intelligence feed</small>
+            <ul><li>Daily Briefing</li><li>Live Signals</li></ul>
+            <small>Planning</small>
+            <ul><li>Targets</li><li>Actions</li></ul>
+          </aside>
+          <div class="ui__main">
+            <div class="ui__head"><b>Command Center</b><span>Illustrative data</span></div>
+            <div class="ui__card">
+              <p class="ui__label"><i class="spark"></i>Verdict</p>
+              <b class="ui__verdict">Revenue edges up on the prior day, flat versus last week</b>
+              <p class="ui__body">Orders are higher while average order value is lower. Month to date is tracking below the previous period.</p>
+              <em class="ui__warn">4 items need attention</em>
+              <div class="ui__tiles">
+                <div><small>Revenue · MTD</small><b>4.82M</b><i class="neg">-3.4% vs prev</i></div>
+                <div><small>Orders · MTD</small><b>18,240</b><i class="pos">+2.1% vs prev</i></div>
+                <div class="ui__sparkline"><small>Vs forecast</small>
+                  <svg viewBox="0 0 520 170" preserveAspectRatio="none">
+                    <path class="c-band" d="M300 76C350 62 420 52 520 34V98C430 104 360 104 300 96Z" />
+                    <path class="c-actual" pathLength="1" d="M0 126C30 112 52 124 82 102S128 110 160 88 204 100 236 84 272 96 300 86" />
+                    <path class="c-fore" pathLength="1" d="M300 86C352 80 430 72 520 64" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="ui__card">
+              <p class="ui__label"><i class="pulse"></i>Needs decision</p>
+              <ul class="feed" id="feed">
+                <li><i class="sev sev--hi"></i><div><b>Revenue below expected range</b><span>Olaya · dine-in</span></div><em>Evidence</em></li>
+                <li><i class="sev sev--mid"></i><div><b>Channel shift</b><span>Delivery platforms · 3 branches</span></div><em>Drivers ranked</em></li>
+                <li><i class="sev sev--lo"></i><div><b>Forecast miss risk</b><span>Month target</span></div><em>Scenario</em></li>
+              </ul>
+            </div>
           </div>
-          <ul class="feed" id="feed">
-            <li><i class="sev sev--hi"></i><div><b>Revenue below expected range</b><span>Olaya · dine-in</span></div><em>Evidence</em></li>
-            <li><i class="sev sev--mid"></i><div><b>Channel shift</b><span>Delivery platforms · 3 branches</span></div><em>Drivers ranked</em></li>
-            <li><i class="sev sev--mid"></i><div><b>Menu item sudden drop</b><span>Top seller · weekday lunch</span></div><em>Routed</em></li>
-            <li><i class="sev sev--lo"></i><div><b>Forecast miss risk</b><span>Month target</span></div><em>Scenario</em></li>
-          </ul>
         </div>
       </div>
 
@@ -170,7 +192,8 @@
     <div class="pin__sticky">
       <div class="wrap convoy__head">
         <div>
-          <p class="eyebrow eyebrow--ink"><b>02</b>Convoy · Food safety, hazard &amp; traceability</p>
+          <p class="plogo plogo--lg"><svg class="plogo__i plogo__i--c" viewBox="0 0 46 32" aria-hidden="true"><g fill="none" stroke-width="4.6" stroke-linecap="round"><path d="M3 14h12c8 0 8-9 16-9h12" stroke="currentColor" /><path class="plogo__c2" d="M3 27h12c8 0 8-9 16-9h12" /></g></svg><span>convoy</span></p>
+          <p class="eyebrow eyebrow--ink"><b>02</b>Food safety, hazard &amp; traceability</p>
           <h2 class="h2" data-split>Every ingredient accounted for. Every hazard <em>caught early.</em></h2>
         </div>
         <p class="lede">Convoy follows each lot from supplier to plate, checks it at every control point, and holds it the moment something is off.</p>
