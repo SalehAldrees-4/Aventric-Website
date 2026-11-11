@@ -313,14 +313,15 @@
   var grow = $('#grow'), growPaths = [];
   if (grow) {
     grow.setAttribute('viewBox', '0 0 100 100');
-    for (var g = -8; g <= 20; g++) {
+    // an upright grid, echoing the Trellis logo: verticals grow upward, horizontals run across
+    for (var g = 0; g < 16; g++) {
       [1, -1].forEach(function (dir) {
         var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        var x = g * 9;
-        path.setAttribute('d', dir > 0 ? 'M' + x + ' 100L' + (x + 60) + ' 0' : 'M' + (x + 60) + ' 100L' + x + ' 0');
+        var at = 3 + g * 6.5;
+        path.setAttribute('d', dir > 0 ? 'M' + at + ' 100V0' : 'M0 ' + at + 'H100');
         path.setAttribute('pathLength', '1');
         grow.appendChild(path);
-        growPaths.push({ el: path, d: (g + 8) / 28 * 0.5 + (dir > 0 ? 0 : 0.08) });
+        growPaths.push({ el: path, d: g / 16 * 0.5 + (dir > 0 ? 0 : 0.1) });
       });
     }
   }

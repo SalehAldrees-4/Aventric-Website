@@ -419,11 +419,15 @@ em { font-style: normal; }
 .pin--convoy .plogo--lg { margin-bottom: 14px; }
 
 .syscard--trellis { background: var(--trellis-ink); }
-.syscard--trellis > svg { stroke: rgba(124, 181, 156, 0.3); }
-.syscard--trellis:hover > svg { stroke: var(--trellis); }
+.syscard--trellis > svg, .syscard--convoy > svg { right: 4%; top: 8%; width: 46%; stroke-linecap: round; }
+.syscard--trellis > svg { stroke-width: 3; stroke: rgba(255, 255, 255, 0.1); }
+.syscard--trellis > svg rect { fill: var(--trellis); stroke: none; }
+.syscard--trellis:hover > svg { stroke: rgba(255, 255, 255, 0.2); transform: scale(1.06); }
+.syscard--convoy > svg { top: 12%; stroke-width: 4.6; stroke: rgba(255, 255, 255, 0.85); }
+.syscard--convoy > svg path + path { stroke: rgba(10, 15, 31, 0.45); }
+.syscard--convoy:hover > svg { stroke: var(--white); transform: translateX(-4%) scale(1.06); }
 .syscard--trellis .syscard__go::after { background: var(--trellis); color: var(--white); }
 .syscard--convoy { background: var(--convoy); }
-.syscard--convoy > svg circle { fill: var(--white); stroke: none; }
 .syscard--convoy .plogo { font-weight: 500; }
 .syscard .plogo { color: var(--white); margin: 0; }
 .syscard .plogo__i { position: static; width: 1.15em; transform: none !important; stroke: none; }
