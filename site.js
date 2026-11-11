@@ -44,7 +44,6 @@
       return '<span style="--i:' + i + '">' + c + '</span>';
     }).join('');
   }
-  $$('#feed li').forEach(function (li, i) { li.style.setProperty('--n', i); });
 
   /* ---------- In-view reveals (started after the intro) ---------- */
   function startReveals() {
@@ -387,6 +386,14 @@
       if (pin.dataset.pin === 'convoy' && journey) journey.update(p);
     });
 
+    if (askWords.length) {
+      var ar = askQuote.getBoundingClientRect();
+      if (ar.top < vh && ar.bottom > 0) {
+        var lit = clamp((vh * 0.9 - ar.top) / (vh * 0.55 + ar.height * 0.5)) * askWords.length;
+        askWords.forEach(function (w, i) { w.classList.toggle('lit', i < lit); });
+      }
+    }
+
     if (trellis && growPaths.length) {
       var tr = trellis.getBoundingClientRect();
       if (tr.top < vh && tr.bottom > 0) {
@@ -397,15 +404,49 @@
   }
   requestAnimationFrame(loop);
 
-  /* ---------- Trellis UI: chart draws in, feed cycles ---------- */
-  var ui = $('#trellisUi');
-  if (ui) {
-    var feed = $$('#feed li'), live = 0;
-    setInterval(function () {
-      if (!ui.classList.contains('in')) return;
-      feed.forEach(function (li, i) { li.classList.toggle('is-live', i === live); });
-      live = (live + 1) % feed.length;
-    }, 2200);
+  /* ---------- Trellis loop: seven stages, cycling while in view ---------- */
+  var loopEl = $('#loop');
+  if (loopEl) {
+    var lNodes = $$('.loop__node', loopEl), lLegend = $$('#loopLegend li'), lArc = $('#loopArc'), lRunner = $('#loopRunner');
+    var lCore = $('.loop__core', loopEl), lNum = $('#loopNum'), lTitle = $('#loopTitle'), lText = $('#loopText');
+    var N = lNodes.length, lStep = 0, lSeen = false, lTimer = null;
+    var showStage = function (step) {
+      // step 0..N-1 lights a stage; step N closes the loop back onto the first stage
+      var i = step % N, closing = step === N;
+      if (step === 0) { // snap the arc back to empty without animating backwards
+        lArc.style.transition = 'none'; lRunner.style.transition = 'none';
+        lArc.style.strokeDasharray = '0 7'; lRunner.style.transform = 'rotate(90deg)';
+        lArc.getBoundingClientRect();
+        lArc.style.transition = ''; lRunner.style.transition = '';
+      } else {
+        lArc.style.strokeDasharray = step + ' 7';
+        lRunner.style.transform = 'rotate(' + (90 + step * 360 / N) + 'deg)';
+      }
+      lNodes.forEach(function (n, k) { n.classList.toggle('is-on', k === i); n.classList.toggle('is-done', closing || k < i); });
+      lLegend.forEach(function (n, k) { n.classList.toggle('is-on', k === i); });
+      lNum.textContent = ('0' + (i + 1)).slice(-2) + ' / 0' + N;
+      lTitle.textContent = lNodes[i].dataset.title;
+      lText.textContent = closing ? 'And the loop starts again, from what was learned.' : lNodes[i].dataset.text;
+      lCore.classList.remove('swap'); lCore.getBoundingClientRect(); lCore.classList.add('swap');
+    };
+    var tickLoop = function () { lStep = lStep >= N ? 0 : lStep + 1; showStage(lStep); };
+    var runLoop = function () { clearInterval(lTimer); if (!reduced) lTimer = setInterval(tickLoop, 2600); };
+    var pick = function (k) { lStep = k; showStage(k); runLoop(); };
+    lNodes.forEach(function (n, k) { n.addEventListener('click', function () { pick(k); }); });
+    lLegend.forEach(function (n, k) { n.addEventListener('click', function () { pick(k); }); });
+    showStage(0);
+    new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { if (!lSeen) { lSeen = true; showStage(0); } runLoop(); } else clearInterval(lTimer);
+    }, { threshold: 0.35 }).observe(loopEl);
+  }
+
+  /* ---------- Trellis question: words light up as it scrolls through ---------- */
+  var askQuote = $('#askQuote'), askWords = [];
+  if (askQuote) {
+    askQuote.setAttribute('aria-label', askQuote.textContent);
+    askQuote.innerHTML = askQuote.textContent.split(' ').map(function (w) { return '<span aria-hidden="true">' + w + '</span>'; }).join(' ');
+    askWords = $$('span', askQuote);
+    if (reduced) askWords.forEach(function (w) { w.classList.add('lit'); });
   }
 
   /* ---------- Magnetic buttons ---------- */
