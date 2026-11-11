@@ -220,9 +220,9 @@
   /* ---------- Converge scene ---------- */
   var stage = $('#stage'), conv = null;
   if (stage) {
-    var names = ['POS sales', 'Delivery apps', 'Menus', 'Suppliers', 'Temperature logs', 'Spreadsheets', 'Campaigns', 'Audits'];
+    var names = ['Sales', 'Channels', 'Menus', 'Suppliers', 'Kitchens', 'Branches', 'Teams', 'Guests'];
     var scatter = [[0.04, 0.1, -9], [0.52, 0.02, 6], [0.3, 0.3, -4], [0.7, 0.26, 10], [0.08, 0.56, 7], [0.5, 0.6, -8], [0.74, 0.76, 5], [0.24, 0.84, -6]];
-    var lines = $('#stageLines'), core = $('#stageCore'), card = $('#stageCard'), steps = $$('#steps li');
+    var lines = $('#stageLines'), core = $('#stageCore'), card = $('#stageOut'), cards = $$('.stage__card', card), steps = $$('#steps li');
     var chips = names.map(function (n, i) {
       var el = document.createElement('div');
       el.className = 'chip';
@@ -233,17 +233,19 @@
       lines.appendChild(path);
       return { el: el, path: path, s: scatter[i] };
     });
-    var out = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    out.setAttribute('pathLength', '1'); lines.appendChild(out);
+    var outs = cards.map(function () {
+      var o = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      o.setAttribute('pathLength', '1'); lines.appendChild(o);
+      return o;
+    });
     conv = { cx: 0, cy: 0, step: -1, measure: function () {
       var w = stage.clientWidth, h = stage.clientHeight, small = w < 520;
       lines.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
       conv.w = w; conv.h = h;
-      conv.cx = small ? w * 0.5 : w * 0.43; conv.cy = small ? h * 0.6 : h * 0.5;
+      conv.cx = small ? w * 0.5 : w * 0.4; conv.cy = small ? h * 0.56 : h * 0.5;
       conv.coreScale = small ? 0.66 : 1;
-      card.style.cssText = small ? 'left:0;right:0;bottom:0;width:auto;padding:14px 16px' : 'right:0;top:50%;margin-top:-90px';
-      $$('span, .stage__card-foot', card).forEach(function (n) { n.style.display = small ? 'none' : ''; });
-      var cr = small ? { x: w * 0.5, y: h - card.offsetHeight } : { x: w - card.offsetWidth, y: h * 0.5 };
+      card.classList.toggle('is-small', small);
+      card.style.top = small ? '' : (h - card.offsetHeight) / 2 + 'px';
       chips.forEach(function (c, i) {
         var cw = c.el.offsetWidth, ch = c.el.offsetHeight;
         c.ax = c.s[0] * (w - cw); c.ay = c.s[1] * (h - ch);
@@ -258,7 +260,11 @@
           c.path.setAttribute('d', 'M' + c.px + ' ' + c.py + 'C' + mx + ' ' + c.py + ' ' + mx + ' ' + conv.cy + ' ' + conv.cx + ' ' + conv.cy);
         }
       });
-      out.setAttribute('d', 'M' + conv.cx + ' ' + conv.cy + 'L' + cr.x + ' ' + cr.y);
+      cards.forEach(function (c, i) {
+        var x = card.offsetLeft + c.offsetLeft, y = card.offsetTop + c.offsetTop;
+        if (small) { x += c.offsetWidth / 2; outs[i].setAttribute('d', 'M' + conv.cx + ' ' + conv.cy + 'C' + conv.cx + ' ' + (y - 10) + ' ' + x + ' ' + (conv.cy + 20) + ' ' + x + ' ' + y); }
+        else { y += c.offsetHeight / 2; var m = lerp(conv.cx, x, 0.5); outs[i].setAttribute('d', 'M' + conv.cx + ' ' + conv.cy + 'C' + m + ' ' + conv.cy + ' ' + m + ' ' + y + ' ' + x + ' ' + y); }
+      });
       core.style.left = conv.cx + 'px'; core.style.top = conv.cy + 'px';
     }, update: function (p) {
       chips.forEach(function (c, i) {
@@ -269,9 +275,11 @@
       });
       var k = ease(range(p, 0.3, 0.46));
       core.style.opacity = k; core.style.transform = 'scale(' + lerp(0.5, conv.coreScale, k) + ')';
-      out.style.strokeDashoffset = 1 - easeIO(range(p, 0.66, 0.78));
-      var c2 = ease(range(p, 0.74, 0.9));
-      card.style.opacity = c2; card.style.transform = 'translateY(' + (1 - c2) * 30 + 'px)';
+      cards.forEach(function (c, i) {
+        outs[i].style.strokeDashoffset = 1 - easeIO(range(p, 0.64 + i * 0.05, 0.76 + i * 0.05));
+        var c2 = ease(range(p, 0.72 + i * 0.07, 0.86 + i * 0.07));
+        c.style.opacity = c2; c.style.transform = 'translateY(' + (1 - c2) * 30 + 'px)';
+      });
       var step = p < 0.34 ? 0 : p < 0.7 ? 1 : 2;
       if (step !== conv.step) { conv.step = step; steps.forEach(function (li, i) { li.classList.toggle('is-on', i === step); }); }
     } };
