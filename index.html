@@ -3,338 +3,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aventric — Operating intelligence for F&amp;B groups</title>
-  <meta name="description" content="Aventric builds AI operating-intelligence systems for F&B groups. Based in Riyadh, built for the Saudi and GCC market." />
+  <title>Aventric — Operating intelligence for hospitality</title>
+  <meta name="description" content="Aventric builds operating intelligence for hospitality groups. Trellis is the decision intelligence layer. Convoy is food safety, hazard control and traceability." />
+  <meta name="theme-color" content="#0D0D14" />
+  <link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/poppins-500.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 3 29 29H3Z' fill='none' stroke='%2300b884' stroke-width='3'/></svg>" />
+  <link rel="icon" href="assets/logo/mark.svg" type="image/svg+xml" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<div class="frame">
 
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Aventric home">
-      <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 29 29H3Z" fill="none" stroke="currentColor" stroke-width="2.6" /><path d="M16 15 21 25H11Z" fill="var(--emerald)" /></svg>
-      <span>AVENTRIC</span>
-    </a>
-    <nav class="nav__links" aria-label="Primary">
-      <a href="#trellis">Trellis</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#insights">Insights</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#principles">Principles</a>
-    </nav>
-    <a class="btn btn--ghost btn--sm" href="#contact">Request a demo <span aria-hidden="true">»</span></a>
-  </header>
+<!-- Intro curtain -->
+<div class="intro" aria-hidden="true">
+  <div class="intro__row">
+    <span class="intro__word">Aventric</span>
+    <span class="intro__count"><b id="introCount">000</b></span>
+  </div>
+  <div class="intro__bar"><i></i></div>
+</div>
 
-  <main id="top">
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Aventric home">
+    <!-- LOGO SLOT: replace assets/logo/mark.svg with the real Aventric icon -->
+    <img class="brand__mark" src="assets/logo/mark.svg" alt="" width="28" height="28" />
+    <span class="brand__word">Aventric</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#trellis"><i>01</i>Trellis</a>
+    <a href="#convoy"><i>02</i>Convoy</a>
+    <a href="#approach"><i>03</i>Approach</a>
+  </nav>
+  <a class="btn btn--nav magnetic" href="#contact"><span>Book a demo</span></a>
+</header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <canvas id="vortex" aria-hidden="true"></canvas>
-      <div class="hero__content">
-        <h1 class="hero__title">
-          <span>The operating intelligence</span>
-          <span class="grad">layer for F&amp;B groups</span>
-        </h1>
-        <p class="hero__sub">See what changed, where it happened, and why — across every brand, branch, and channel. Human approval stays at the center of every decision.</p>
-        <div class="actions">
-          <a class="btn btn--ghost" href="#solutions">Explore solutions <span aria-hidden="true">»</span></a>
-          <a class="btn btn--solid" href="#contact">Request a demo</a>
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" data-theme="dark">
+    <canvas class="hero__canvas" id="lattice" aria-hidden="true"></canvas>
+    <div class="hero__shade" aria-hidden="true"></div>
+
+    <div class="hero__inner wrap">
+      <p class="eyebrow hero__eyebrow"><i class="pulse"></i>Operating intelligence for hospitality</p>
+      <h1 class="hero__title" data-split>Know what changed.<br /><em>Before it costs you.</em></h1>
+      <div class="hero__foot">
+        <p class="hero__sub reveal">Aventric turns the scattered data of a hospitality group — sales, channels, menus, suppliers, kitchens — into clear decisions and controlled action. A person approves everything that matters.</p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--light magnetic" href="#contact"><span>Book a demo</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M5 3h8v8" /></svg></a>
+          <a class="btn btn--line magnetic" href="#systems"><span>See the systems</span></a>
         </div>
       </div>
-      <div class="marquee" aria-label="Data sources Aventric connects">
-        <div class="marquee__track">
-          <span>POS systems</span><span>Delivery platforms</span><span>Menus</span><span>Campaigns</span><span>Suppliers</span><span>Spreadsheets</span><span>Compliance logs</span><span>Forecasts</span><span>Branch operations</span>
-          <span aria-hidden="true">POS systems</span><span aria-hidden="true">Delivery platforms</span><span aria-hidden="true">Menus</span><span aria-hidden="true">Campaigns</span><span aria-hidden="true">Suppliers</span><span aria-hidden="true">Spreadsheets</span><span aria-hidden="true">Compliance logs</span><span aria-hidden="true">Forecasts</span><span aria-hidden="true">Branch operations</span>
+    </div>
+
+    <div class="hero__index wrap">
+      <a href="#trellis"><small>01</small><b>Trellis</b><span>Decision intelligence</span></a>
+      <a href="#convoy"><small>02</small><b>Convoy</b><span>Food safety, hazard &amp; traceability</span></a>
+      <p><small>HQ</small><b>Riyadh</b><span>Built for Saudi Arabia &amp; the GCC</span></p>
+      <p class="hero__scroll"><span>Scroll</span><i></i></p>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="ticker" data-theme="navy" aria-label="See faster. Decide better. Protect revenue. Serve safely.">
+    <div class="ticker__row" data-dir="1" aria-hidden="true"><div class="ticker__track"><span>See faster</span><span class="o">Decide better</span><span>Protect revenue</span><span class="o">Serve safely</span></div></div>
+    <div class="ticker__row" data-dir="-1" aria-hidden="true"><div class="ticker__track"><span class="o">Every branch</span><span>Every channel</span><span class="o">Every ingredient</span><span>Every shift</span></div></div>
+  </section>
+
+  <!-- PROBLEM: pinned scene, noise to decision -->
+  <section class="pin" id="problem" data-theme="light" data-pin="converge">
+    <div class="pin__sticky">
+      <div class="wrap converge">
+        <div class="converge__text">
+          <p class="eyebrow eyebrow--ink">The problem</p>
+          <h2 class="h2" data-split>Hospitality doesn't lack data. It lacks <em>one version</em> of what is happening.</h2>
+          <ol class="steps" id="steps">
+            <li class="is-on"><b>Scattered</b><span>The truth lives in a dozen systems and arrives days late.</span></li>
+            <li><b>Connected</b><span>Aventric joins it into one governed picture of the operation.</span></li>
+            <li><b>Decided</b><span>What changed, where, and what to review next — with the evidence attached.</span></li>
+          </ol>
         </div>
-      </div>
-    </section>
-
-    <!-- TRELLIS -->
-    <section class="section" id="trellis">
-      <div class="head">
-        <h2><span>Signals, not dashboards.</span><span class="dim">Trellis tells you what changed.</span></h2>
-        <p>Trellis is the decision-intelligence brain for multi-branch operators — comparing every day against baseline and forecast, and surfacing only the movement that matters.</p>
-      </div>
-
-      <div class="panel panel--fade reveal">
-        <div class="app">
-          <aside class="app__side">
-            <div class="app__brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 29 29H3Z" fill="none" stroke="currentColor" stroke-width="3" /></svg>Trellis</div>
-            <ul>
-              <li>Daily brief</li>
-              <li class="is-active">Signals</li>
-              <li>Branches</li>
-              <li>Menu</li>
-              <li>Forecast</li>
-            </ul>
-            <p class="app__group">Watchlist</p>
-            <ul>
-              <li><i class="dot dot--saffron"></i>Olaya branch</li>
-              <li><i class="dot dot--emerald"></i>Delivery mix</li>
-              <li><i class="dot dot--red"></i>Month target</li>
-            </ul>
-          </aside>
-          <div class="app__main timeline">
-            <div class="timeline__days"><span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span></div>
-            <div class="signal" style="--start:8%;--len:46%;--tail:14%">
-              <p><i class="dot dot--red"></i>Revenue below expected range <code>Olaya · dine-in</code></p>
-              <div class="signal__bar signal__bar--red"><b style="left:34%"></b><b style="left:78%"></b></div>
-              <div class="signal__steps"><span style="left:34%">Detected</span><span style="left:78%">Evidence pack</span></div>
-            </div>
-            <div class="signal" style="--start:2%;--len:58%;--tail:22%">
-              <p><i class="dot dot--emerald"></i>Channel shift <code>Delivery platforms</code></p>
-              <div class="signal__bar signal__bar--emerald"><b style="left:28%"></b><b style="left:70%"></b></div>
-              <div class="signal__steps"><span style="left:28%">Sliced by platform</span><span style="left:70%">Drivers ranked</span></div>
-            </div>
-            <div class="signal" style="--start:24%;--len:50%;--tail:16%">
-              <p><i class="dot dot--saffron"></i>Menu item sudden drop <code>Top seller · 3 branches</code></p>
-              <div class="signal__bar signal__bar--saffron"><b style="left:22%"></b><b style="left:52%"></b><b style="left:84%"></b></div>
-              <div class="signal__steps"><span style="left:22%">Detected</span><span style="left:52%">Reviewed</span><span style="left:84%">Routed</span></div>
-            </div>
-            <div class="signal" style="--start:44%;--len:40%;--tail:0%">
-              <p><i class="dot dot--white"></i>Forecast miss risk <code>Month target</code></p>
-              <div class="signal__bar"><b style="left:30%"></b><b style="left:72%"></b></div>
-              <div class="signal__steps"><span style="left:30%">Gap to target</span><span style="left:72%">Scenario</span></div>
-            </div>
-            <div class="signal" style="--start:12%;--len:36%;--tail:0%">
-              <p><i class="dot dot--white"></i>Data quality issue <code>POS sync</code></p>
-              <div class="signal__bar"><b style="left:40%"></b></div>
-              <div class="signal__steps"><span style="left:40%">Flagged</span></div>
-            </div>
+        <div class="stage" id="stage" aria-hidden="true">
+          <svg class="stage__lines" id="stageLines" preserveAspectRatio="none"></svg>
+          <div class="stage__core" id="stageCore"><img src="assets/logo/mark.svg" alt="" /><i></i><i></i></div>
+          <div class="stage__card" id="stageCard">
+            <p class="tag tag--navy">Signal · reviewed 07:42</p>
+            <b>Dine-in revenue below expected range</b>
+            <span>Olaya branch · driven by two top sellers · evidence pack attached</span>
+            <div class="stage__card-foot"><em>Route to branch ops</em><em class="ghost">Approve</em></div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEMS INTRO -->
+  <section class="systems" id="systems" data-theme="light">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--ink reveal">The systems</p>
+      <h2 class="display" data-split>Two systems.<br />One operating picture.</h2>
+      <div class="systems__grid">
+        <a class="syscard syscard--dark reveal" href="#trellis">
+          <small>01</small>
+          <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M10 60 60 10l50 50-50 50zM35 35l50 50M85 35 35 85M10 60h100M60 10v100" /></svg>
+          <h3>Trellis</h3>
+          <p>The decision intelligence layer. Performance, forecasts and signals for every brand, branch and channel.</p>
+          <span class="syscard__go">Explore Trellis</span>
+        </a>
+        <a class="syscard syscard--navy reveal" href="#convoy">
+          <small>02</small>
+          <svg viewBox="0 0 120 120" aria-hidden="true"><path d="M8 92c22 0 22-30 44-30s22-30 44-30h16" /><circle cx="8" cy="92" r="5" /><circle cx="52" cy="62" r="5" /><circle cx="96" cy="32" r="5" /></svg>
+          <h3>Convoy</h3>
+          <p>Food safety, hazard control and traceability. Every ingredient followed from supplier to plate.</p>
+          <span class="syscard__go">Explore Convoy</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRELLIS -->
+  <section class="trellis" id="trellis" data-theme="dark">
+    <svg class="trellis__grow" id="grow" aria-hidden="true" preserveAspectRatio="none"></svg>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="eyebrow reveal"><b>01</b>Trellis · Decision intelligence</p>
+          <h2 class="h2" data-split>Dashboards tell you what happened. Trellis tells you <em>what changed.</em></h2>
+          <p class="lede reveal">Trellis compares every day against baseline and forecast, then surfaces only the movement that matters: which branch, which channel, which item, and how material it is.</p>
+          <ul class="ticks reveal">
+            <li>Role-based views for executives, growth and operations</li>
+            <li>Forecast overlays with confidence ranges</li>
+            <li>End-of-day, week and month briefings</li>
+            <li>A live signal feed that stays quiet unless something is material</li>
+          </ul>
+        </div>
+
+        <div class="ui reveal" id="trellisUi">
+          <div class="ui__bar"><span><i class="pulse"></i>Signal feed</span><span>Illustrative data</span></div>
+          <div class="ui__chart">
+            <div class="ui__chart-head"><b>Revenue · all branches</b><span><i class="k k--a"></i>Actual<i class="k k--f"></i>Forecast</span></div>
+            <svg viewBox="0 0 520 170" preserveAspectRatio="none">
+              <path class="c-band" d="M300 76C350 62 420 52 520 34V98C430 104 360 104 300 96Z" />
+              <path class="c-grid" d="M0 42h520M0 85h520M0 128h520" />
+              <path class="c-actual" pathLength="1" d="M0 126C30 112 52 124 82 102S128 110 160 88 204 100 236 84 272 96 300 86" />
+              <path class="c-fore" pathLength="1" d="M300 86C352 80 430 72 520 64" />
+              <line class="c-now" x1="300" y1="8" x2="300" y2="162" />
+              <circle class="c-dot" cx="300" cy="86" r="4.5" />
+            </svg>
+          </div>
+          <ul class="feed" id="feed">
+            <li><i class="sev sev--hi"></i><div><b>Revenue below expected range</b><span>Olaya · dine-in</span></div><em>Evidence</em></li>
+            <li><i class="sev sev--mid"></i><div><b>Channel shift</b><span>Delivery platforms · 3 branches</span></div><em>Drivers ranked</em></li>
+            <li><i class="sev sev--mid"></i><div><b>Menu item sudden drop</b><span>Top seller · weekday lunch</span></div><em>Routed</em></li>
+            <li><i class="sev sev--lo"></i><div><b>Forecast miss risk</b><span>Month target</span></div><em>Scenario</em></li>
+          </ul>
         </div>
       </div>
 
       <div class="trio">
-        <div class="reveal"><h3>Detect against baseline.</h3><p>Every metric is checked against history and forecast, so unusual movement surfaces on day one.</p></div>
-        <div class="reveal"><h3>Explain with evidence.</h3><p>Each signal carries the branch, channel, and item that drove it — ranked by impact.</p></div>
-        <div class="reveal"><h3>Route to action.</h3><p>Findings go to the team that owns them, with a human approving anything that matters.</p></div>
+        <article class="reveal"><small>Detect</small><h3>Against baseline and forecast</h3><p>Unusual movement surfaces on day one, not at the monthly review.</p></article>
+        <article class="reveal"><small>Explain</small><h3>With evidence attached</h3><p>Every signal carries the branch, channel and item that drove it, ranked by impact.</p></article>
+        <article class="reveal"><small>Route</small><h3>To the team that owns it</h3><p>Findings go to the right people, with a human approving what happens next.</p></article>
       </div>
-    </section>
-
-    <div class="band"></div>
-
-    <!-- ECOSYSTEM BENTO -->
-    <section class="section" id="ecosystem">
-      <div class="head">
-        <h2><span>One intelligence layer.</span><span class="dim">Every decision in context.</span></h2>
-        <p>Aventric systems share one governed foundation — your brands, branches, channels, menus, and suppliers, connected.</p>
-      </div>
-
-      <div class="bento">
-        <article class="bento__cell reveal">
-          <div class="mock">
-            <div class="mock__bar"><span><i class="dot dot--emerald"></i>EVIDENCE PIPELINE · LIVE</span><span>4 stages · 0 invented numbers</span></div>
-            <div class="flow">
-              <div class="flow__node"><small>DEFINES</small>Metric registry</div>
-              <div class="flow__node"><small>DETECTS</small>Signal registry</div>
-              <div class="flow__node flow__node--on"><small>CONTEXT</small>Decision graph</div>
-              <div class="flow__node"><small>PROVES</small>Evidence pack</div>
-            </div>
-            <p class="mock__term">› The model only writes the language.</p>
-          </div>
-          <h3>Governed by design</h3>
-          <p>Business logic lives in governed data, not inside a language model. Every finding is backed by structured evidence.</p>
-        </article>
-
-        <article class="bento__cell reveal">
-          <div class="mock">
-            <div class="mock__bar"><span>Revenue · forecast overlay</span><span class="chip">NEXT 14 DAYS</span></div>
-            <svg class="chart" viewBox="0 0 400 150" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M230 62 C270 50 310 44 400 30 L400 86 C330 92 280 90 230 78Z" fill="rgba(0,184,132,.14)" />
-              <path d="M0 110 C30 96 50 104 80 84 S130 92 160 70 200 78 230 70" fill="none" stroke="#f4f4f2" stroke-width="1.6" />
-              <path d="M230 70 C280 66 330 60 400 56" fill="none" stroke="#00b884" stroke-width="1.6" stroke-dasharray="4 4" />
-              <line x1="230" y1="10" x2="230" y2="140" stroke="rgba(255,255,255,.18)" stroke-dasharray="2 4" />
-            </svg>
-            <div class="mock__legend"><span><i class="swatch"></i>Actual</span><span><i class="swatch swatch--emerald"></i>Forecast</span><span><i class="swatch swatch--band"></i>Confidence range</span></div>
-          </div>
-          <h3>Forecasts you can defend</h3>
-          <p>Actuals, forecast, and confidence range on the same chart — shown only where the history supports it.</p>
-        </article>
-
-        <article class="bento__cell reveal">
-          <div class="mock">
-            <div class="mock__bar"><span>Convoy · chain of custody</span><span class="chip">LOT TRACE</span></div>
-            <ol class="chain">
-              <li><b>Supplier</b><span>Received · documents verified</span><em>OK</em></li>
-              <li><b>Central kitchen</b><span>Cold storage · 3.4°C</span><em>OK</em></li>
-              <li class="is-warn"><b>Transit</b><span>Temperature excursion · 22 min</span><em>Review</em></li>
-              <li><b>3 branches</b><span>Stock located · ready to isolate</span><em>Hold</em></li>
-            </ol>
-          </div>
-          <h3>Traceability in seconds</h3>
-          <p>Convoy follows every ingredient from supplier to plate, so a safety question has an answer before it becomes an incident.</p>
-        </article>
-
-        <article class="bento__cell reveal">
-          <div class="mock">
-            <div class="mock__bar"><span>Approvals</span><span>3 waiting</span></div>
-            <ul class="inbox">
-              <li><i class="dot dot--saffron"></i><div><b>Approval required</b><span>Isolate affected lot across 3 branches</span></div><time>8m</time></li>
-              <li><i class="dot dot--emerald"></i><div><b>End-of-day brief ready</b><span>2 alerts · 4 observations · 1 watchlist item</span></div><time>1h</time></li>
-              <li><i class="dot dot--red"></i><div><b>Target gap risk</b><span>Daily revenue needed to hit month target has risen</span></div><time>4h</time></li>
-            </ul>
-          </div>
-          <h3>Human approval, always</h3>
-          <p>Recommendations wait for a person. Every approved action is logged with a full audit trail.</p>
-        </article>
-      </div>
-    </section>
-
-    <div class="band"></div>
-
-    <!-- INSIGHTS -->
-    <section class="section" id="insights">
-      <div class="head">
-        <h2><span>See every branch</span><span class="dim">before the week is over.</span></h2>
-        <p>One executive view across brands, branches, and channels — with the forecast and the month target always in frame.</p>
-      </div>
-
-      <div class="panel panel--fade reveal">
-        <div class="app">
-          <aside class="app__side">
-            <div class="app__brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 29 29H3Z" fill="none" stroke="currentColor" stroke-width="3" /></svg>Trellis</div>
-            <ul>
-              <li class="is-active">Executive overview</li>
-              <li>Growth &amp; channels</li>
-              <li>Branch &amp; operations</li>
-              <li>Menu performance</li>
-              <li>Forecast &amp; risk</li>
-            </ul>
-            <p class="app__group">Reports</p>
-            <ul>
-              <li>End of day</li>
-              <li>End of week</li>
-              <li>End of month</li>
-            </ul>
-          </aside>
-          <div class="app__main dash">
-            <p class="dash__title">Executive overview <span>Illustrative data</span></p>
-            <div class="tiles">
-              <div><small>Revenue today</small><b>SAR 184,200</b></div>
-              <div><small>Orders</small><b>3,389</b></div>
-              <div><small>Average order value</small><b>SAR 54.3</b></div>
-              <div class="tiles__target"><small>Month target <i>Live</i></small><b>68.5%</b><span class="meter"><span></span></span></div>
-            </div>
-            <div class="dash__grid">
-              <div class="card">
-                <p>Orders by branch and channel</p>
-                <div class="bars" id="bars"></div>
-                <div class="mock__legend"><span><i class="swatch swatch--emerald"></i>Dine-in</span><span><i class="swatch swatch--saffron"></i>Delivery</span><span><i class="swatch"></i>Pickup</span></div>
-              </div>
-              <div class="card">
-                <p>Branches versus forecast</p>
-                <table>
-                  <thead><tr><th>Branch</th><th>Orders</th><th>vs forecast</th><th>Signal</th></tr></thead>
-                  <tbody id="rows"></tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="band"></div>
-
-    <!-- SOLUTIONS -->
-    <section class="section" id="solutions">
-      <div class="head">
-        <h2><span>Built around your business,</span><span class="dim">not sold as a licence.</span></h2>
-        <p>Each system is designed and deployed around your real brands, branches, menus, workflows, and teams.</p>
-      </div>
-
-      <div class="cards">
-        <article class="pcard reveal">
-          <small>Decision intelligence</small>
-          <h3>Trellis</h3>
-          <p>The central brain for performance, forecasts, signals, and executive briefings.</p>
-          <a class="btn btn--solid btn--block" href="#contact">Request a demo</a>
-          <ul><li>Role-based dashboards</li><li>Forecast overlays</li><li>End-of-day, week, and month briefs</li><li>Live signal feed</li><li>Target and scenario planning</li></ul>
-        </article>
-        <article class="pcard reveal">
-          <small>Food safety &amp; traceability</small>
-          <h3>Convoy</h3>
-          <p>Every ingredient accounted for, from supplier to branch to plate.</p>
-          <a class="btn btn--solid btn--block" href="#contact">Request a demo</a>
-          <ul><li>Lot-level chain of custody</li><li>Supplier and receiving records</li><li>Compliance as a live signal</li><li>Isolate-and-recall workflows</li></ul>
-        </article>
-        <article class="pcard reveal">
-          <small>On the roadmap</small>
-          <h3>More modules</h3>
-          <p>Specialist intelligence for the functions that drive F&amp;B performance.</p>
-          <a class="btn btn--ghost btn--block" href="#contact">Get updates</a>
-          <ul><li>Growth and marketing</li><li>Margin and resources</li><li>Expansion and portfolio</li></ul>
-        </article>
-        <article class="pcard reveal">
-          <small>Your operation</small>
-          <h3>Custom</h3>
-          <p>An intelligence layer shaped to your group, with approvals where you want them.</p>
-          <a class="btn btn--ghost btn--block" href="#contact">Talk to us</a>
-          <ul><li>Your data sources connected</li><li>Your policies and thresholds</li><li>Deployed with your teams</li><li>Built for Saudi Arabia and the GCC</li></ul>
-        </article>
-      </div>
-    </section>
-
-    <div class="band"></div>
-
-    <!-- PRINCIPLES -->
-    <section class="section" id="principles">
-      <div class="head">
-        <h2><span>Intelligence you can verify.</span><span class="dim">Never a black box.</span></h2>
-        <p>Most F&amp;B teams do not lack effort. They lack one trusted version of what is happening. These are the rules our systems run on.</p>
-      </div>
-
-      <div class="quotes">
-        <article class="qcard reveal">
-          <div class="qcard__body">
-            <small>How findings are made</small>
-            <blockquote>The metric registry defines the numbers. Evidence packs prove the finding. The model only writes the language.</blockquote>
-          </div>
-          <div class="qcard__stats"><div>No numbers<br />invented by AI</div><div>Every finding<br />traceable to data</div></div>
-        </article>
-        <article class="qcard reveal">
-          <div class="qcard__body">
-            <small>How actions are taken</small>
-            <blockquote>Agents never act outside your approval. Every recommendation is logged, and every approved action has an audit trail.</blockquote>
-          </div>
-          <div class="qcard__stats"><div>Human approval on<br />every external action</div><div>Quiet unless something<br />material happens</div></div>
-        </article>
-      </div>
-    </section>
-
-    <div class="band"></div>
-
-    <!-- CTA -->
-    <section class="cta" id="contact">
-      <canvas id="rain" aria-hidden="true"></canvas>
-      <div class="cta__content">
-        <p class="cta__eyebrow">Riyadh · Built for Saudi Arabia and the GCC</p>
-        <h2><span>Stop finding out late.</span><span class="grad">See it as it happens.</span></h2>
-        <p>Tell us about your brands and branches. We will show you what your data has been trying to say.</p>
-        <div class="actions">
-          <a class="btn btn--ghost" href="#solutions">Explore solutions <span aria-hidden="true">»</span></a>
-          <a class="btn btn--solid" href="mailto:hello@aventric.com">Request a demo</a>
-        </div>
-      </div>
-    </section>
-
-    <div class="band"></div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer__about">
-      <a class="brand" href="#top"><svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 29 29H3Z" fill="none" stroke="currentColor" stroke-width="2.6" /><path d="M16 15 21 25H11Z" fill="var(--emerald)" /></svg><span>AVENTRIC</span></a>
-      <p>AI operating intelligence for F&amp;B groups. See faster, decide better, reduce leakage, protect revenue.</p>
     </div>
-    <div><h4>Solutions</h4><a href="#trellis">Trellis</a><a href="#ecosystem">Convoy</a><a href="#solutions">Roadmap</a></div>
-    <div><h4>Platform</h4><a href="#ecosystem">How it works</a><a href="#insights">Insights</a><a href="#principles">Principles</a></div>
-    <div><h4>Company</h4><a href="#contact">Contact</a><a href="mailto:hello@aventric.com">hello@aventric.com</a></div>
-    <p class="footer__meta"><span>© 2026 Aventric. All rights reserved.</span><span>Riyadh, Saudi Arabia</span></p>
-  </footer>
+  </section>
 
-</div>
+  <!-- CONVOY: pinned horizontal journey -->
+  <section class="pin pin--convoy" id="convoy" data-theme="light" data-pin="convoy">
+    <div class="pin__sticky">
+      <div class="wrap convoy__head">
+        <div>
+          <p class="eyebrow eyebrow--ink"><b>02</b>Convoy · Food safety, hazard &amp; traceability</p>
+          <h2 class="h2" data-split>Every ingredient accounted for. Every hazard <em>caught early.</em></h2>
+        </div>
+        <p class="lede">Convoy follows each lot from supplier to plate, checks it at every control point, and holds it the moment something is off.</p>
+      </div>
+
+      <div class="route" id="route">
+        <div class="route__track" id="routeTrack">
+          <div class="route__line"><i id="routeFill"></i><b id="routeLot"><span>LOT 2291</span></b></div>
+
+          <article class="stop"><i class="stop__node"></i><small>01 · Supplier</small><h3>Received</h3><p>Certificates and delivery documents verified against the order.</p><div class="stop__read"><span>Documents</span><b>Verified</b></div></article>
+          <article class="stop"><i class="stop__node"></i><small>02 · Receiving</small><h3>Checked</h3><p>Core temperature logged at the door before the lot is accepted.</p><div class="stop__read"><span>Core temp</span><b>3.1 °C</b></div></article>
+          <article class="stop"><i class="stop__node"></i><small>03 · Storage</small><h3>Monitored</h3><p>Cold room readings recorded through every shift, not once a day.</p><div class="stop__read"><span>Cold room 2</span><b>3.4 °C</b></div></article>
+          <article class="stop stop--hazard"><i class="stop__node"></i><small>04 · Preparation</small><h3>Hazard flagged</h3><p>Time above the safe limit is caught as it happens and escalated.</p><div class="stop__read"><span>Above 8 °C</span><b>22 min</b></div></article>
+          <article class="stop"><i class="stop__node"></i><small>05 · Service</small><h3>Isolated</h3><p>The affected batch is held and the branches carrying it are notified.</p><div class="stop__read"><span>Branches holding</span><b>3</b></div></article>
+          <article class="stop stop--end"><small>Trace complete</small><h3>Which lot, which branches, which plates.</h3><p>One question, answered in seconds instead of a week of phone calls.</p></article>
+        </div>
+      </div>
+
+      <div class="wrap convoy__caps">
+        <p><b>Safety checks</b>Digital control-point logs your teams complete on shift.</p>
+        <p><b>Hazard control</b>Deviations flagged, escalated and closed with a corrective action.</p>
+        <p><b>Traceability</b>Lot-level chain of custody, forward and back.</p>
+        <p class="convoy__note">Illustrative journey</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach" id="approach" data-theme="navy">
+    <div class="wrap">
+      <p class="eyebrow reveal"><b>03</b>Approach</p>
+      <h2 class="display" data-split>Built around your operation. Not sold as a licence.</h2>
+      <ol class="rows">
+        <li class="reveal"><small>01</small><h3>Governed numbers</h3><p>Metrics are defined once, in governed data. The model writes the language; it never invents a number.</p></li>
+        <li class="reveal"><small>02</small><h3>Human approval</h3><p>Recommendations wait for a person. Every approved action is logged with an audit trail.</p></li>
+        <li class="reveal"><small>03</small><h3>Quiet by default</h3><p>No notification noise. You hear from the system when something material happens.</p></li>
+        <li class="reveal"><small>04</small><h3>Shaped to you</h3><p>Designed and deployed around your real brands, branches, menus, suppliers and teams.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="contact" data-theme="dark">
+    <div class="wrap">
+      <p class="eyebrow reveal"><i class="pulse"></i>Starting with hospitality</p>
+      <h2 class="display" data-split>Stop finding out late.</h2>
+      <p class="lede reveal">Tell us about your brands and branches. We will show you what your data has been trying to say.</p>
+      <a class="cta__btn magnetic reveal" href="mailto:hello@aventric.com"><span>Book<br />a demo</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-theme="dark">
+  <div class="wrap footer__top">
+    <p>Operating intelligence for hospitality.<br />Riyadh, Saudi Arabia.</p>
+    <nav aria-label="Footer"><a href="#trellis">Trellis</a><a href="#convoy">Convoy</a><a href="#approach">Approach</a><a href="mailto:hello@aventric.com">hello@aventric.com</a></nav>
+  </div>
+  <p class="footer__word" id="footWord" aria-hidden="true">Aventric</p>
+  <p class="wrap footer__meta"><span>© 2026 Aventric</span><a href="#top">Back to top ↑</a></p>
+</footer>
+
 <script src="site.js"></script>
 </body>
 </html>
