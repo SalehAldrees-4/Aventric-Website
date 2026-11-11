@@ -254,7 +254,8 @@ em { font-style: normal; }
 .trellis .wrap { position: relative; }
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 96px); align-items: center; }
 .split .h2 { margin: 20px 0 24px; }
-.ticks { margin-top: 30px; }
+.ticks__head { margin-top: 30px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy-glow); }
+.ticks { margin-top: 12px; }
 .ticks li { position: relative; padding: 13px 0 13px 30px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 15px; color: rgba(255, 255, 255, 0.86); }
 .ticks li::before { content: ''; position: absolute; left: 2px; top: 21px; width: 9px; height: 9px; background: var(--navy-lit); transform: rotate(45deg); }
 
