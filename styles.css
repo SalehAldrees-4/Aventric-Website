@@ -101,8 +101,9 @@ em { font-style: normal; }
 }
 .js .intro.done { transform: translateY(-101%); }
 .intro__row { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
-.intro__word { font-size: clamp(40px, 9vw, 150px); font-weight: 500; letter-spacing: -0.05em; line-height: 0.9; }
+.intro__word { display: flex; align-items: center; gap: 0.14em; font-size: clamp(40px, 9vw, 150px); font-weight: 600; letter-spacing: -0.05em; line-height: 0.9; }
 .intro__count { font-size: clamp(18px, 2vw, 28px); font-weight: 300; font-variant-numeric: tabular-nums; }
+.intro__word .brand__mark { width: 0.86em; }
 .intro__bar { height: 2px; margin-top: 24px; background: rgba(255, 255, 255, 0.2); }
 .intro__bar i { display: block; height: 100%; background: var(--white); transform: scaleX(0); transform-origin: 0 50%; }
 
@@ -119,9 +120,10 @@ em { font-style: normal; }
 .nav.is-light.is-stuck { background: rgba(243, 244, 249, 0.78); }
 .nav.is-navy.is-stuck { background: rgba(25, 39, 154, 0.78); }
 .nav.is-hidden { transform: translateY(-100%); }
-.brand { display: inline-flex; align-items: center; gap: 12px; }
-.brand__mark { width: 28px; height: 28px; }
-.brand__word { font-size: 19px; font-weight: 600; letter-spacing: -0.02em; }
+.brand { display: inline-flex; align-items: center; gap: 9px; }
+.brand__mark { width: 30px; height: auto; fill: currentColor; transition: fill 0.4s; }
+.nav.is-light .brand__mark { fill: var(--navy); }
+.brand__word { font-size: 23px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; padding-bottom: 3px; }
 .nav__links { display: flex; gap: clamp(20px, 3vw, 48px); }
 .nav__links a { position: relative; display: flex; gap: 8px; align-items: baseline; font-size: 14px; font-weight: 500; padding: 6px 0; }
 .nav__links a i { font-style: normal; font-size: 10px; opacity: 0.5; }
@@ -201,7 +203,7 @@ em { font-style: normal; }
   box-shadow: 0 30px 60px -20px rgba(25, 39, 154, 0.7);
   opacity: 0; transform: scale(0.5);
 }
-.stage__core img { width: 100%; height: 100%; border-radius: inherit; }
+.stage__core img { width: 58%; margin-right: 2%; }
 .stage__core i { position: absolute; inset: 0; border-radius: inherit; border: 1px solid var(--navy); animation: ring 2.6s var(--ease) infinite; }
 .stage__core i + i { animation-delay: 1.3s; }
 @keyframes ring { from { transform: scale(1); opacity: 0.7; } to { transform: scale(2.1); opacity: 0; } }
